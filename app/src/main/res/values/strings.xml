@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">conversorapp</string>
+    <string name="titulo">CONVERSOR</string>
+    <string name="convertir">convertir</string>
+</resources>
