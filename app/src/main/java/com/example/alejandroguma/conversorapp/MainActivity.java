@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         Button bConvertir;
 
         Double pesos,dolares;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,13 +28,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+                if(!ePesos.getText().toString().equals("")&& !eDolares.getText().toString().equals("")){
+                    Toast.makeText(MainActivity.this, "Digite solo un valor", Toast.LENGTH_SHORT).show();
+                }
+                if(ePesos.getText().toString().equals("")&& eDolares.getText().toString().equals("")){
+                    Toast.makeText(MainActivity.this, "Digite una cantidad", Toast.LENGTH_SHORT).show();
+                }
                 if (ePesos.getText().toString().equals("")&& !eDolares.getText().toString().equals("")){
                     dolares=Double.parseDouble(eDolares.getText().toString());
-                    pesos=dolares/3000;
+                    pesos=dolares*2902;
                     ePesos.setText(pesos.toString());
 
                 }
+                if(!ePesos.getText().toString().equals("")&& eDolares.getText().toString().equals("")){
+                    pesos=Double.parseDouble(ePesos.getText().toString());
+                    dolares=pesos/2902;
+                    eDolares.setText(dolares.toString());
+
+                }
+
+
             }
         });
 

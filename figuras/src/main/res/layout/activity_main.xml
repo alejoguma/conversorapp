@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="com.example.alejandroguma.figuras.MainActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black" >
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="Selecciona una figura:"
+        android:textColor="@color/darkcyan"
+        android:textSize="20sp"/>
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="120sp"
+        android:orientation="vertical"
+        >
+
+        <RadioButton style="@style/RadioButtonStyle"
+            android:text="CUADRADO"
+            android:id="@+id/cuadrado"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton style="@style/RadioButtonStyle"
+            android:text="CIRCULO"
+            android:id="@+id/circulo"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton style="@style/RadioButtonStyle"
+            android:text="TRIANGULO"
+            android:id="@+id/triangulo"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton style="@style/RadioButtonStyle"
+            android:text="CUBO"
+            android:id="@+id/cubo"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"/>
+
+    </RadioGroup>
+
+</LinearLayout>
+
+    <!--Vista para el cuadrado-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/vistacuadrado">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_height="100dp"
+                android:src="@drawable/cuadrado"
+                />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/ladocuadrado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:hint="Lado"
+            android:inputType="numberDecimal" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bCalcularC"
+            android:onClick="onButtonclicked"
+            android:text="Calcular"
+            android:background="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Perimetro:"
+            android:textSize="20sp"
+            />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ePericuadrado"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:inputType="numberDecimal"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Area:"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/eAreacuadrado"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--Vista para el triangulo-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/vistatriangulo">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_height="100dp"
+                android:src="@drawable/triangulo"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/alturatriangulo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40sp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="Altura(h):"
+                android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/ladoAtriangulo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40sp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="Lado(a):"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <EditText
+            android:id="@+id/basetriangulo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40sp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:hint="Base(b):"
+            android:inputType="numberDecimal" />
+            <EditText
+                android:id="@+id/ladoCtriangulo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40sp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:hint="Lado(c):"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:id="@+id/bCalcularT"
+            android:onClick="onButtonclicked"
+            android:text="Calcular"
+            android:background="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Perimetro:"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/ePeritriangulo"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Area:"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/eAreatriangulo"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <!--Vista para el circulo-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/vistacirculo"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_height="100dp"
+                android:src="@drawable/circulo"
+                />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/radiocirculo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:hint="Radio"
+            android:inputType="numberDecimal" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bCalcularCirc"
+            android:onClick="onButtonclicked"
+            android:text="Calcular"
+            android:background="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Perimetro:"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/ePericirculo"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Area:"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/eAreacirculo"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--Vista cubo-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+
+        android:id="@+id/vistacubo">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_height="100dp"
+                android:src="@drawable/cubo"
+                />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/ladocubo"
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:hint="Lado:"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40sp"
+            android:id="@+id/bCalcularCubo"
+            android:onClick="onButtonclicked"
+            android:text="Calcular"
+            android:background="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Perimetro:"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/ePericubo"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Area:"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/eAreacubo"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Volumen:"
+                android:textSize="20sp"
+                />
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/eVolumencubo"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="numberDecimal"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
